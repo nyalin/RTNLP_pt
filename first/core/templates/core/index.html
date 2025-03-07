@@ -1,0 +1,33 @@
+<pre>{{ target_date }}</pre>
+나무위키 인기 검색어
+{% if NMWK_trend_search %}
+    <ul>
+    {% for trend_search_info in NMWK_trend_search %}
+        <li>{{ trend_search_info.rank_num }} - <a href="https://namu.wiki/w/{{trend_search_info.search_word}}">{{ trend_search_info.search_word }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>자료 없음.</p>
+{% endif %}
+
+ZUM 인기 검색어
+{% if ZUM_trend_search %}
+    <ul>
+    {% for trend_search_info in ZUM_trend_search %}
+        <li>{{ trend_search_info.rank_num }} - {{ trend_search_info.search_word }}</li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>자료 없음.</p>
+{% endif %}
+
+네이트 인기 검색어
+{% if NATE_trend_search %}
+    <ul>
+    {% for trend_search_info in NATE_trend_search %}
+        <li>{{ trend_search_info.rank_num }} - {{ trend_search_info.search_word }}</li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>자료 없음.</p>
+{% endif %}
